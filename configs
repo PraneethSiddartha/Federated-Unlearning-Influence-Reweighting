@@ -1,1 +1,49 @@
+# Experiment Configuration
+# Paper: Federated Unlearning via Lightweight Influence-Aware Reweighting
 
+experiment:
+  name: "federated_unlearning_influence_aware"
+  version: "1.0.0"
+
+# Federated Learning Settings
+federated_learning:
+  num_clients: 10          # K = 10 clients
+  clients_per_round: 10    # Full participation
+  num_rounds: 20           # T = 20 rounds
+  local_epochs: 5          # E = 5 local epochs
+
+# Model
+model:
+  architecture: "SimpleCNN"
+  num_classes: 62
+  parameters: 134590
+
+# Dataset
+dataset:
+  name: "FEMNIST"
+  partition:
+    method: "dirichlet"
+    alpha: 0.5
+
+# Training
+training:
+  optimizer: "SGD"
+  learning_rate: 0.01
+  batch_size: 32
+
+# Unlearning
+unlearning:
+  formula: "theta_u = theta_T - alpha * delta_theta_c"
+  alpha:
+    default: 0.5
+    range: [0.3, 0.7]
+  target_client: 3
+
+# Evaluation
+evaluation:
+  seeds: [0, 1, 2, 3, 4]
+  metrics:
+    - retain_accuracy
+    - forget_accuracy
+    - mia_accuracy
+    - cosine_similarity
