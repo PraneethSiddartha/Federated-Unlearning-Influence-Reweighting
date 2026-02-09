@@ -205,6 +205,8 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 ## 👤 Author
 
 **Praneeth Siddartha**
+** praneethsambu@gmail.com**
+**https://github.com/PraneethSiddartha**
 
 ---
 
