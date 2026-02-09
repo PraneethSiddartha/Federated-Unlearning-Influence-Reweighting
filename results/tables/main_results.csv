@@ -1,0 +1,4 @@
+condition,retain_acc,retain_std,forget_acc,forget_std,mia_acc,mia_std,time_s
+Before Unlearning,80.15,1.18,78.67,2.34,68.34,2.15,
+After Unlearning (α=0.5),78.92,1.52,18.45,3.21,51.23,1.89,0.015
+Retrained Baseline,79.23,1.41,12.38,2.87,50.45,1.12,1847.5
